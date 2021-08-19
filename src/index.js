@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import Layout from './containers/Layout';
 import './assets/styles/main.scss';
 import StateActionsContextTag from './context/stateContext';
+
 const App = () => {
   return (
     <>

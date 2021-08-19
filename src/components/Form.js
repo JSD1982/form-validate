@@ -1,11 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 import validate from '../helpers/validateInfo';
 import useForm from '../helpers/useForm';
 import SelectField from './SelectField';
 import InputField from './InputField';
 import { StateActionsContext } from '../context/stateContext';
-import { success, error } from '../helpers/mock';
-import axios from 'axios';
+import { dataSuccess, dataError } from '../helpers/mock';
 
 const Form = ({ submitForm }) => {
   const ctx = React.useContext(StateActionsContext);
@@ -23,17 +23,18 @@ const Form = ({ submitForm }) => {
         .post('http://localhost:3005/items', values)
         .then(response => {
           if (response) {
-            ctx.setNotification(success.message);
+            ctx.setNotification( dataSuccess.message );
           } else {
-            ctx.setNotification(error.message);
+            ctx.setNotification( dataError.message );
           }
         })
-        .catch(function(error) {
+        .catch( ( error ) =>
+        {
           ctx.setNotification(error);
         });
     }
   }, [values, errors]);
-  console.log(errors, values);
+
   return (
     <>
       <form onSubmit={handleSubmit} noValidate>
@@ -151,7 +152,7 @@ const Form = ({ submitForm }) => {
             </button>
           </div>
           <div className="col-6 col-sm-3 mb-3">
-            <button className="button-secondary" onClick={handleReset}>
+            <button className="button-secondary" type="button" onClick={handleReset}>
               RESET
             </button>
           </div>

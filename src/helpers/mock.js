@@ -1,9 +1,9 @@
-export const success = {
+export const dataSuccess = {
   status: 'success',
   message: 'Thank you. You are now subscribed.',
 };
 
-export const error = {
+export const dataError = {
   status: 'error',
   message: 'Invalid Subscription request.',
 };

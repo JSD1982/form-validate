@@ -1,14 +1,16 @@
 import React from 'react';
-const SelectField = props => {
-  return (
-    <div className={props.className}>
-      <label htmlFor={props.name}>{props.label}</label>
 
-      <select name={props.name} id={props.name} onChange={props.onChange}>
-        <option selected disabled>
+const SelectField = props =>
+{
+  const { className, name, label, children, onChange } = props;
+  return (
+    <div className={className}>
+      <label htmlFor={name}>{ label }</label>
+      <select name={name} id={name} onChange={onChange}>
+        <option selected disabled value="">
           - Select one -
         </option>
-        {props.children}
+        { children }
       </select>
     </div>
   );

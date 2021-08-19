@@ -1,6 +1,7 @@
 import React from 'react';
 import { StateActionsContext } from '../context/stateContext';
 import check from '../assets/images/check.svg';
+
 const FormSuccess = () => {
   const ctx = React.useContext(StateActionsContext);
   return (

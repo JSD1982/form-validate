@@ -1,16 +1,20 @@
 import React from 'react';
-const InputField = props => {
+
+const InputField = props =>
+{
+  const { className, name, label, type, value, onChange, checked, placeholder } = props;
   return (
-    <div className={props.className}>
-      <label htmlFor={props.name}>
-        {props.label}
+    <div className={className}>
+      <label htmlFor={name}>
+        { label }
         <input
-          type={props.type ? props.type : 'text'}
-          name={props.name}
-          value={props.value}
-          onChange={props.onChange}
-          checked={props.checked}
-          placeholder={props.placeholder}
+          type={type || 'text'}
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          checked={checked}
+          placeholder={placeholder}
         />
       </label>
     </div>

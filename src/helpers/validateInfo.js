@@ -1,6 +1,6 @@
 export default function validateInfo( values )
 {
-  let errors = {};
+  const errors = {};
 
   if ( !values.firstName.trim() )
   {
