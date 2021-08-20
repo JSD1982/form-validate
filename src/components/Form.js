@@ -20,17 +20,18 @@ const Form = ({ submitForm }) => {
   React.useEffect(() => {
     if (isSubmitting === true && Object.keys(errors).length === 0) {
       axios
-        .post('http://localhost:3005/items', values)
+        .post( 'http://localhost:3005/items', values )
         .then(response => {
-          if (response) {
+          if ( response )
+          {
+
             ctx.setNotification( dataSuccess.message );
-          } else {
-            ctx.setNotification( dataError.message );
           }
         })
-        .catch( ( error ) =>
+        .catch( () =>
         {
-          ctx.setNotification(error);
+          ctx.setErrorData( true );
+          ctx.setNotification( dataError.message );
         });
     }
   }, [values, errors]);
@@ -158,6 +159,7 @@ const Form = ({ submitForm }) => {
           </div>
         </div>
       </form>
+      { ctx.notification && <p className="form-error">{ ctx.notification }</p> }
     </>
   );
 };

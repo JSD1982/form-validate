@@ -133,8 +133,11 @@ $errorStatus: #e12130;
         font-size: 22px;
       }
     }
+    
   }
-
+  .form-error{
+      color:$errorStatus;
+  }
   @keyframes slide-animate-top {
     from {
       opacity: 0;
