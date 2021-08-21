@@ -6,8 +6,8 @@ const SelectField = props =>
   return (
     <div className={className}>
       <label htmlFor={name}>{ label }</label>
-      <select name={name} id={name} onChange={onChange}>
-        <option selected disabled value="">
+      <select name={ name } id={ name } onChange={ onChange } defaultValue="- Select one -" >
+        <option disabled >
           - Select one -
         </option>
         { children }
