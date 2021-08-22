@@ -7,16 +7,17 @@ const InputField = props =>
     <div className={className}>
       <label htmlFor={name}>
         { label }
-        <input
-          type={type || 'text'}
-          id={name}
-          name={name}
-          value={value}
-          onChange={onChange}
-          checked={checked}
-          placeholder={placeholder}
-        />
       </label>
+      <input
+        type={ type || 'text' }
+        id={ name }
+        name={ name }
+        value={ value }
+        onChange={ onChange }
+        checked={ checked }
+        placeholder={ placeholder }
+      />
+
     </div>
   );
 };
