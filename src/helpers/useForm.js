@@ -1,17 +1,20 @@
+import React from 'react'
 import { useState, useEffect } from 'react';
 
+const initialState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  org: '',
+  euResident: '',
+  advances: false,
+  alerts: false,
+  other: false
+}
 const useForm = ( callback, validate ) =>
 {
-  const [ values, setValues ] = useState( {
-    firstName: '',
-    lastName: '',
-    email: '',
-    org: '',
-    euResident: '',
-    advances: '',
-    alerts: '',
-    other: ''
-  } );
+
+  const [ values, setValues ] = useState( initialState );
   const [ errors, setErrors ] = useState( {} );
 
   const [ isSubmitting, setIsSubmitting ] = useState( false );
@@ -30,16 +33,10 @@ const useForm = ( callback, validate ) =>
   const handleReset = e =>
   {
     e.preventDefault();
-    setValues( {
-      firstName: '',
-      lastName: '',
-      email: '',
-      org: '',
-      euResident: '',
-      advances: false,
-      alerts: false,
-      other: false
-    } )
+    setValues( initialState )
+
+    setErrors( {} )
+    setIsSubmitting( false );
 
   }
 

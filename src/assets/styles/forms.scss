@@ -137,6 +137,7 @@ $errorStatus: #e12130;
   }
   .form-error{
       color:$errorStatus;
+      font-weight: bold;
   }
   @keyframes slide-animate-top {
     from {
